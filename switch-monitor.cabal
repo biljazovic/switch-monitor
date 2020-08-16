@@ -1,0 +1,51 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 47ad5bf707547f9dce6090f3154eea84d28987da90718938c9e4e84da86b6823
+
+name:           switch-monitor
+version:        0.1.0.0
+description:    Script to cycle mouse position between monitors.
+author:         Bruno Iljazovic
+maintainer:     bruno.iljazovic@gmail.com
+build-type:     Simple
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_switch_monitor
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , directory
+    , filepath
+    , megaparsec
+    , optparse-applicative
+    , process
+    , random
+  default-language: Haskell2010
+
+executable switch-monitor
+  main-is: Main.hs
+  other-modules:
+      Paths_switch_monitor
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , directory
+    , filepath
+    , megaparsec
+    , optparse-applicative
+    , process
+    , random
+    , switch-monitor
+  default-language: Haskell2010

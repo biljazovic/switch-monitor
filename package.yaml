@@ -1,0 +1,26 @@
+library:
+  source-dirs: src
+maintainer: bruno.iljazovic@gmail.com
+dependencies:
+- megaparsec
+- process
+- base >= 4.7 && < 5
+- containers
+- random
+- optparse-applicative
+- directory
+- filepath
+name: switch-monitor
+version: 0.1.0.0
+author: Bruno Iljazovic
+executables:
+  switch-monitor:
+    source-dirs: app
+    main: Main.hs
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - switch-monitor
+description: Script to cycle mouse position between monitors.
