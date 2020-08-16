@@ -4,13 +4,15 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 47ad5bf707547f9dce6090f3154eea84d28987da90718938c9e4e84da86b6823
+-- hash: c4bf236b4dabd59ee710dca3cd9ae07ea952d28f6a4aab538a4fac575de51ad3
 
 name:           switch-monitor
 version:        0.1.0.0
 description:    Script to cycle mouse position between monitors.
 author:         Bruno Iljazovic
 maintainer:     bruno.iljazovic@gmail.com
+license:        MIT
+license-file:   LICENSE
 build-type:     Simple
 
 library
@@ -20,6 +22,7 @@ library
       Paths_switch_monitor
   hs-source-dirs:
       src
+  ghc-options: -Wall -O2 -threaded
   build-depends:
       base >=4.7 && <5
     , containers
@@ -37,7 +40,7 @@ executable switch-monitor
       Paths_switch_monitor
   hs-source-dirs:
       app
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -O2 -threaded -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
     , containers

@@ -1,6 +1,6 @@
 module Lib
   ( Monitor (..),
-    Mouse (..),
+    Mouse,
     Mode (..),
     nextMousePosition,
     parseMonitors,
@@ -8,7 +8,6 @@ module Lib
   )
 where
 
-import Control.Applicative hiding (many, some)
 import Data.List
 import Data.Maybe
 import Data.Void
@@ -35,7 +34,7 @@ monitorP = do
   sy <- L.decimal <* char '/' <* L.decimal
   ofx <- char '+' *> L.decimal
   ofy <- char '+' *> L.decimal
-  many anySingle
+  _ <- many anySingle
   return (Mn sx sy ofx ofy)
   where
     nonSpace = some (anySingleBut ' ')

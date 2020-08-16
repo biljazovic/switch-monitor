@@ -24,3 +24,7 @@ executables:
     dependencies:
     - switch-monitor
 description: Script to cycle mouse position between monitors.
+ghc-options: 
+  -Wall 
+  -O2 
+  -threaded

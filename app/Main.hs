@@ -6,7 +6,6 @@ module Main where
 import Lib
 import Options.Applicative
 import System.Directory
-import System.Environment
 import System.FilePath.Posix
 import System.Process
 
@@ -36,6 +35,7 @@ data Opts = Opts
     moveNext :: !Bool
   }
 
+main :: IO ()
 main = do
   opts <- execParser optsParser
   if | reloadMonitors opts -> reloadList
